@@ -1,0 +1,95 @@
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta content="width=device-width, initial-scale=1" name="viewport" />
+		<meta content="https://divit.site/resources/smallLogo.png" property="og:image" />
+		<meta content="Divit Mittal" property="og:site_name" />
+		<meta content="https://divit.site" property="og:url" />
+		<meta content="website" property="og:type" />
+		<meta content="Divit Mittal Logo" property="og:image:alt" />
+		<meta content="Void - Divit Mittal" property="og:title" />
+		<meta
+			content="Do not trust what you are being told.
+		  Do not follow what you are being told.
+		  Do not enter the page at all, if you fear the void.
+		  The void of divit.site is infinite and damage is permanently irreversible.
+		  Caution is adviced."
+			property="og:description"
+		/>
+		<title>Void - Divit Mittal</title>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				height: 100%;
+				width: 100%;
+				font-family: monospace;
+				background: linear-gradient(
+					0,
+					#000000,
+					#000000,
+					#0e0e0eff,
+					#000000,
+					#0e0e0eff,
+					#000000,
+					#000000
+				);
+				background-size: 800% 800%;
+				animation: AnimationName 15s ease infinite;
+				color: white;
+			}
+
+			video {
+				height: 100%;
+				position: absolute;
+			}
+
+			body,
+			#welcome-page {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			#shine {
+				height: 10%;
+				width: 40%;
+				background-color: #ffffff;
+				filter: blur(200px);
+				position: absolute;
+				top: 0;
+				transform: translate(0px, -100%);
+			}
+
+			#welcome-page {
+				cursor: help;
+				position: absolute;
+				background: #000;
+				height: 100%;
+				width: 100%;
+			}
+
+			@keyframes AnimationName {
+				0% {
+					background-position: 50% 0;
+				}
+
+				100% {
+					background-position: 50% 100%;
+				}
+			}
+		</style>
+		<link href="styles/void.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div id="welcome-page">Click to enter. You comply to do this at your own risk.</div>
+		<div id="shine"></div>
+		<video hidden="" id="jump-scare">
+			<source src="resources/jump-scare.mp4" type="video/mp4" />
+		</video>
+		<div id="text"></div>
+		<audio id="audio" loop src="resources/void.mp3"></audio>
+		<script src="https://unpkg.com/typeit@latest/dist/index.umd.js"></script>
+		<script src="scripts/void.js"></script>
+	</body>
+</html>
