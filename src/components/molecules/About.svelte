@@ -6,9 +6,8 @@
 <section>
 	<SectionHeader text="About me" icon={faAddressCard} />
 	<p>
-		22-year-old computer science student
-		at <a target="_blank" href="https://uni-augsburg.de/">University of Augsburg</a>.
-		forums.
+		A 22-year-old data science student @ MUJ<br/>
+    My <a href="https://europa.eu/europass/eportfolio/screen/share/33683761-9b95-4b23-8184-fa65f7a14e06?lang=en">Curriculum Vitae</a>
 	</p>
 </section>
 
