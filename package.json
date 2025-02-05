@@ -1,7 +1,7 @@
 {
-	"name": "divit.site",
-	"homepage": "http://divit.site",
-	"version": "0.0.1",
+	"name": "personal-website",
+	"homepage": "http://divit.qezta.com",
+	"version": "0.0.2",
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
