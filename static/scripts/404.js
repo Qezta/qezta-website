@@ -1,1 +1,1 @@
-document.onclick = () => location.href = location.origin
+document.onclick = () => (location.href = location.origin);
