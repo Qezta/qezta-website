@@ -50,9 +50,7 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="og:title" content="Divit Mittal" />
-	<meta content="/a-12.png" property="og:image" />
 	<meta property="og:description" content="My personal website" />
-	<meta name="twitter:image" itemprop="image" content="/a-12.png" />
 	<meta name="twitter:card" content="summary" />
 	<meta name="theme-color" content="#000" />
 	<title>Divit Mittal</title>
