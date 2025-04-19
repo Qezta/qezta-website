@@ -13,7 +13,8 @@
 		This version of the site is currently under active development. Thanks for stopping by!
 	</p>
 
-	<p>
+	<!-- Added a class to this paragraph -->
+	<p class="link-paragraph">
 		Until then you can visit the my site here:
 		<a href={mainSiteUrl} target="_blank" rel="noopener noreferrer">{mainSiteUrl}</a>
 	</p>
@@ -25,37 +26,37 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		min-height: 80vh; // Adjust as needed to center vertically
+		min-height: 80vh;
 		text-align: center;
 		padding: 2rem;
-		gap: 1.5rem; // Adds space between elements
-
-		// Inherit font from global styles or set explicitly
-		// font-family: var(--font-main, sans-serif); // Example using CSS variable
+		gap: 1.5rem;
 	}
 
 	.logo {
-		max-width: 150px; // Adjust size as needed
+		max-width: 250px;
 		height: auto;
-		margin-bottom: 1rem; // Space below the logo
+		margin-bottom: 1rem;
 	}
 
 	h1 {
-		// Inherit color/font-size or set explicitly
-		// color: var(--color-primary, #333); // Example
 		margin-bottom: 0.5rem;
 	}
 
 	p {
-		// Inherit color/font-size or set explicitly
-		// color: var(--color-text, #555); // Example
 		line-height: 1.6;
-		max-width: 500px; // Limit text width for readability
+		max-width: 500px;
 	}
 
+	.link-paragraph {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		max-width: 100%;
+	}
+	/* --- End Added style --- */
+
+
 	a {
-		// Inherit link color or set explicitly
-		// color: var(--color-accent, blue); // Example
 		text-decoration: underline;
 		font-weight: bold;
 

@@ -49,11 +49,11 @@
 <svelte:head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="og:title" content="Divit Mittal" />
+	<meta name="og:title" content="Qezta" />
 	<meta property="og:description" content="My personal website" />
 	<meta name="twitter:card" content="summary" />
 	<meta name="theme-color" content="#000" />
-	<title>Divit Mittal</title>
+	<title>Qezta</title>
 </svelte:head>
 
 <svelte:window on:mousedown={playClickSound} on:contextmenu={(e) => e.preventDefault()} />
