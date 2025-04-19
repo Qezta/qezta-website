@@ -1,8 +1,3 @@
-<script>
-	// You can import components here if needed for styling or layout
-	// import SomeComponent from '../components/SomeComponent.svelte';
-</script>
-
 <svelte:head>
 	<title>Qezta - Development</title>
 </svelte:head>
@@ -11,7 +6,7 @@
 	<div>
 		<h1>Welcome to the Qezta Development Site</h1>
 		<p>This is a temporary placeholder page.</p>
-		<p>The main site is still available at <a href="https://divit.qezta.com">divit.qezta.com</a>.</p>
+		<p>My profile site is still available at <a href="https://divit.qezta.com">divit.qezta.com</a>.</p>
 	</div>
 </div>
 
