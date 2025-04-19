@@ -1,74 +1,33 @@
 <script lang="ts">
 	import { scale } from '../../store/cursor';
+
+	// Define image properties - adjust path and dimensions as needed
+	export let src = '/pp_ascii.png'; // Assuming the image is in the static/public folder
+	export let alt = "Divit Mittal's profile picture";
+	export let width = '150'; // Example width, adjust as necessary
+	export let height = '150'; // Example height, adjust as necessary
 </script>
 
 <!-- svelte-ignore a11y-mouse-events-have-key-events -->
-<!-- svelte-ignore a11y-click-events-have-key-events -->
-<pre
-	aria-label="Divit Mittal's profile picture ASCII art"
+<!-- Removed the pre tag and ASCII art -->
+<img
+	{src}
+	{alt}
+	{width}
+	{height}
 	on:mouseover={() => scale.set(1.2)}
 	on:mouseleave={() => scale.set(0)}
->{`
- @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ # + = = - . . . + + + # @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @
- @ @ @ @ @ @ @ @ @ @ @ @ @ + - - . .   .   . . . . . . . . - = + @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @
- @ @ @ @ @ @ @ @ @ @ @ + - .   .         . . . . . . . . . . . - = + # @ @ @ @ @ @ @ @ @ @ @ @ @ @ @
- @ @ @ @ @ @ @ @ @ @ @ = . .         . . . . . . . . . . . . . . . . - # @ @ @ @ @ @ @ @ @ @ @ @ @
- @ @ @ @ @ @ @ @ @ @ # - . . .       . . . . . . . . . . . . . . .   - @ @ @ @ @ @ @ @ @ @ @ @ @
- @ @ @ @ @ @ @ @ @ @ + . . . . .   . . . . . . . . . . . . . . . .   - @ @ @ @ @ @ @ @ @ @ @ @ @
- @ @ @ @ @ @ @ @ @ @ + . . .   . - - - - .   .       . . . . . . . - @ @ @ @ @ @ @ @ @ @ @ @ @
- @ @ @ @ @ @ @ @ @ @ # . . . . = # + + - - - = = = - . . . . . .   . = @ @ @ @ @ @ @ @ @ @ @ @ @
- @ @ @ @ @ @ @ @ @ @ @ - . . - # # # # + # @ @ @ # # + + + + = .   . # @ @ @ @ @ @ @ @ @ @ @ @ @
- @ @ @ @ @ @ @ @ @ @ @ = . - # @ # + + - = @ @ @ # + = = = + = . . # @ @ @ @ @ @ @ @ @ @ @ @ @
- @ @ @ @ @ @ @ @ @ @ @ # = - @ @ # + - - = + @ @ # = - - = = + # . - # @ @ @ @ @ @ @ @ @ @ @ @ @
- @ @ @ @ @ @ @ @ @ @ @ # # # # @ @ @ # # # # @ @ @ # # # + + + # # = # @ @ @ @ @ @ @ @ @ @ @ @ @
- @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ # # # @ @ @ @ @ @ @ @ @ @ @ @ @
- @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ # # # # @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @
- @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ # # # + + # # # # # # # @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @
- @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ # # # # # # # # # # # # @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @
- @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ # # # # # # # # # # # # @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @
- @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ # # # # # # # # # # # # @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @
- @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ # # # # # # # # + + # # @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @
- @ @ @ @ @ @ @ @ @ @ @ @ + = - - + @ # # # # # # # # + + # # + + + # @ @ @ @ @ @ @ @ @ @ @ @ @
- @ @ @ @ @ @ @ @ @ @ @ = . . . - + @ @ # # # # # # # # # # # # # = - . . = + @ @ @ @ @ @ @ @ @ @ @ @
- @ @ @ @ @ @ @ @ @ @ # - . . . = + # @ # # # # # # # # # # # # # # = - . . . - = + # @ @ @ @ @ @ @ @ @
- + = - - . . . . . . . . . - + @ # # # # # # # # # # # # # # # # # # = . . . . . . . . . = + # @ @ @
- . . . .     . . . . . . = + @ # # # # # # # # # # # # # # # # # # # # + - . . . . . . . . . . . .
- . . . . . . . . . . . . - = @ # # # # # # # # # # # # # # # # # # # # # + = . . . . . . . . . . . .
-`}</pre>
+/>
 
 <style lang="scss">
-	pre {
+	img {
 		cursor: pointer;
-		// Adjust width as needed, or let it be determined by content
-		// width: 450px;
-		font-family: monospace; // Crucial for ASCII art alignment
-		font-size: 0.6em; // Adjust for optimal display size
-		line-height: 0.7; // Adjust for optimal display density
-		// animation-name: hovering; // Animation might look odd on text
-		// animation-timing-function: ease-in-out;
-		// animation-duration: 2.5s;
-		// animation-iteration-count: infinite;
+		display: block;
+		max-width: 100%;
+		height: auto;
 		transition: 0.3s filter ease;
 		&:hover {
 			filter: brightness(1.3);
 		}
-
-		// Consider removing or adjusting media query if width is content-based
-		// @media (max-width: 505px) {
-		// 	width: 100%;
-		// }
 	}
-
-	// @keyframes hovering { // Remove or adjust animation
-	// 	0% {
-	// 		transform: translateY(6px);
-	// 	}
-
-	// 	50% {
-	// 		transform: translateY(-6px);
-	// 	}
-	// 	100% {
-	// 		transform: translateY(6px);
-	// 	}
-	// }
 </style>
