@@ -8,7 +8,7 @@
 	<meta property='og:image:alt' content='Abstract Logo'/>
 	<meta property='og:title' content='n/a'/>
 	<meta property='og:description' content="n/a"/>
-	<title>404 - Divit Mittal</title>
+	<title>404</title>
 	<link rel="icon" href="resources/icon.png">
 	<link rel="stylesheet" href="/styles/404.css">
 	<script type="text/javascript" src="/scripts/404.js"></script>
