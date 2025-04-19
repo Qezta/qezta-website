@@ -1,3 +1,4 @@
-<h1 align='center'>Personal Website</h1>
+<h1 align='center'>Qezta & Personal Website</h1>
 
-My personal website, ![click here](https://divit.qezta.com)
+My personal website: ![divit.qezta.com](https://divit.qezta.com)
+Under development Qezta website: ![www.Qezta.com](https://www.qezta.com)
