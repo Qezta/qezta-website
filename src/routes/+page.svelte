@@ -1,22 +1,33 @@
-<svelte:head>
-	<title>Qezta - Development</title>
-</svelte:head>
+<script lang="ts">
+	import { onMount } from 'svelte';
+	import Card from '../components/organisms/Card.svelte';
 
-<div style="display: flex; justify-content: center; align-items: center; min-height: 50vh; text-align: center;">
-	<div>
-		<h1>Welcome to the Qezta Development Site</h1>
-		<p>This is a temporary placeholder page.</p>
-		<p>My profile site is still available at <a href="https://divit.qezta.com">divit.qezta.com</a>.</p>
+	let showLogo = false;
+
+	onMount(() => {
+		// Check hostname only on the client-side
+		if (window.location.hostname === 'qezta.com') {
+			showLogo = true;
+		}
+	});
+</script>
+
+{#if showLogo}
+	<div class="logo-container">
+		<img src="/qezta.png" alt="Qezta Logo" class="logo" />
 	</div>
-</div>
+{/if}
+
+<Card />
 
 <style>
-	/* Add any specific styles for this placeholder page if needed */
-	h1 {
-		margin-bottom: 1rem;
+	.logo-container {
+		text-align: center;
+		padding: 20px 0; /* Add some padding */
+		margin-bottom: 20px; /* Add space below the logo */
 	}
-	a {
-		color: inherit; /* Or set a specific color */
-		text-decoration: underline;
+	.logo {
+		max-width: 150px; /* Adjust size as needed */
+		height: auto;
 	}
 </style>
