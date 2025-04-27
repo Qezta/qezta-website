@@ -2,45 +2,48 @@ name: Generate Sitemap
 
 on:
   push:
-    branches: [ master, dev-qezta ]
+    branches: [master, dev-qezta]
+  pull_request:
+    branches: [master, dev-qezta]
+  workflow_dispatch:
 
 jobs:
   sitemap_job:
+    name: Generate sitemap.xml
+
     runs-on: ubuntu-latest
-    name: Generate a sitemap
-
     steps:
-    - name: Checkout the repo
-      uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
+      - name: Checkout the repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
 
-    - name: Set Base URL based on branch
-      id: set_base_url
-      run: |
-        if [[ "${{ github.ref_name }}" == "master" ]]; then
-          echo "BASE_URL=https://www.divit.qezta.com/" >> $GITHUB_ENV
-        elif [[ "${{ github.ref_name }}" == "dev-qezta" ]]; then
-          echo "BASE_URL=https://www.qezta.com/" >> $GITHUB_ENV
-        else
-          echo "Unknown branch: ${{ github.ref_name }}"
-          exit 1
-        fi
+      - name: Set Base URL based on branch
+        id: set_base_url
+        run: |
+          if [[ "${{ github.ref_name }}" == "master" ]]; then
+            echo "BASE_URL=https://www.divit.qezta.com/" >> $GITHUB_ENV
+          elif [[ "${{ github.ref_name }}" == "dev-qezta" ]]; then
+            echo "BASE_URL=https://www.qezta.com/" >> $GITHUB_ENV
+          else
+            echo "Unknown branch: ${{ github.ref_name }}"
+            exit 1
+          fi
 
-    - name: Generate the sitemap
-      uses: cicirello/generate-sitemap@v1
-      with:
-        base-url-path: ${{ env.BASE_URL }}
-        sitemap-path: static/sitemap.xml
+      - name: Generate the sitemap
+        uses: cicirello/generate-sitemap@v1
+        with:
+          base-url-path: ${{ env.BASE_URL }}
+          sitemap-path: static/sitemap.xml
 
-    - name: Commit and push sitemap
-      run: |
-        if [[ `git status --porcelain static/sitemap.xml` ]]; then
-          git config --global user.name 'github-actions'
-          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add static/sitemap.xml
-          git commit -m "Automated sitemap update for ${{ github.ref_name }}" static/sitemap.xml
-          git push
-        else
-          echo "No changes to sitemap.xml"
-        fi
+      - name: Commit and push sitemap
+        run: |
+          if [[ `git status --porcelain static/sitemap.xml` ]]; then
+            git config --global user.name 'github-actions'
+            git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add static/sitemap.xml
+            git commit -m "Automated sitemap update for ${{ github.ref_name }}" static/sitemap.xml
+            git push
+          else
+            echo "No changes to sitemap.xml"
+          fi
