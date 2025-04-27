@@ -1,15 +1,12 @@
 <script lang="ts">
 	import { scale } from '../../store/cursor';
 
-	// Define image properties - adjust path and dimensions as needed
-	export let src = '/pp_ascii.png'; // Assuming the image is in the static/public folder
+	export let src = '/pp_ascii.svg';
 	export let alt = "Divit Mittal's profile picture";
-	export let width = '150'; // Example width, adjust as necessary
-	export let height = '150'; // Example height, adjust as necessary
+	export let width = '150';
+	export let height = '150';
 </script>
 
-<!-- svelte-ignore a11y-mouse-events-have-key-events -->
-<!-- Removed the pre tag and ASCII art -->
 <img
 	{src}
 	{alt}
@@ -17,6 +14,7 @@
 	{height}
 	on:mouseover={() => scale.set(1.2)}
 	on:mouseleave={() => scale.set(0)}
+	style="border-radius: {$$props.borderRadius || '8px'}"
 />
 
 <style lang="scss">
@@ -26,6 +24,7 @@
 		max-width: 100%;
 		height: auto;
 		transition: 0.3s filter ease;
+		border-radius: 8px;
 		&:hover {
 			filter: brightness(1.3);
 		}
