@@ -51,7 +51,7 @@ vec3 blur(sampler2D sp, vec2 uv, vec2 scale) {
 void main() {
 	vec2 uv = (gl_FragCoord.xy - 0.5 * u_resolution.xy) / u_resolution.y;
 	uv *= scale;
-	
+
 	vec2 mouse = u_mouse * scale;
 	vec2 ps = vec2(1.0) / u_resolution.xy;
 	vec2 sample = gl_FragCoord.xy / u_resolution.xy;
