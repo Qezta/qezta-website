@@ -12,7 +12,7 @@
 	<div class="icon">
 		<Fa icon={faIcon} />
 	</div>
-	<a href={link}>{overrideText ? overrideText : 'divit.site/#' + anchor}</a>
+	<a href={link}>{overrideText ? overrideText : '#' + anchor}</a>
 </li>
 
 <style lang="scss">
