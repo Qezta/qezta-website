@@ -14,6 +14,9 @@ importers:
       '@fortawesome/free-solid-svg-icons':
         specifier: ^6.7.2
         version: 6.7.2
+      '@vercel/analytics':
+        specifier: ^1.5.0
+        version: 1.5.0(@sveltejs/kit@1.30.4(svelte@3.59.2)(vite@4.5.5(sass@1.83.0)))(svelte@3.59.2)
       sass:
         specifier: ^1.83.0
         version: 1.83.0
@@ -455,6 +458,32 @@ packages:
 
   '@ungap/structured-clone@1.2.1':
     resolution: {integrity: sha512-fEzPV3hSkSMltkw152tJKNARhOupqbH96MZWyRjNaYZOMIzbrTeQDG+MTc6Mr2pgzFQzFxAfmhGDNP5QK++2ZA==}
+
+  '@vercel/analytics@1.5.0':
+    resolution: {integrity: sha512-MYsBzfPki4gthY5HnYN7jgInhAZ7Ac1cYDoRWFomwGHWEX7odTEzbtg9kf/QSo7XEsEAqlQugA6gJ2WS2DEa3g==}
+    peerDependencies:
+      '@remix-run/react': ^2
+      '@sveltejs/kit': ^1 || ^2
+      next: '>= 13'
+      react: ^18 || ^19 || ^19.0.0-rc
+      svelte: '>= 4'
+      vue: ^3
+      vue-router: ^4
+    peerDependenciesMeta:
+      '@remix-run/react':
+        optional: true
+      '@sveltejs/kit':
+        optional: true
+      next:
+        optional: true
+      react:
+        optional: true
+      svelte:
+        optional: true
+      vue:
+        optional: true
+      vue-router:
+        optional: true
 
   acorn-jsx@5.3.2:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -1582,6 +1611,11 @@ snapshots:
       eslint-visitor-keys: 3.4.3
 
   '@ungap/structured-clone@1.2.1': {}
+
+  '@vercel/analytics@1.5.0(@sveltejs/kit@1.30.4(svelte@3.59.2)(vite@4.5.5(sass@1.83.0)))(svelte@3.59.2)':
+    optionalDependencies:
+      '@sveltejs/kit': 1.30.4(svelte@3.59.2)(vite@4.5.5(sass@1.83.0))
+      svelte: 3.59.2
 
   acorn-jsx@5.3.2(acorn@8.14.0):
     dependencies:

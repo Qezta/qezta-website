@@ -1,9 +1,13 @@
 <script lang="ts">
+  import { dev } from '$app/environment';
+  import { injectAnalytics } from '@vercel/analytics/sveltekit';
 	import { onMount } from 'svelte';
 	import '../styles/global.scss';
 	import '../styles/fonts.scss';
 	import Cursor from '../components/atoms/Cursor.svelte';
 	import { burst } from '../store/cursor';
+
+  injectAnalytics({ mode: dev ? 'development' : 'production' });
 
 	let playClickSound: (() => void) | undefined;
 
