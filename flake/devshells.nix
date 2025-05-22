@@ -13,6 +13,7 @@
           vscode-langservers-extracted
           emmet-language-server
           typescript-language-server
+          svelte-language-server
           ;
         inherit (pkgs.nodePackages) prettier;
       };
