@@ -1,9 +1,14 @@
 <script lang="ts">
+  import { injectAnalytics } from '@vercel/analytics/sveltekit';
+  import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
 	import { onMount } from 'svelte';
 	import '../styles/global.scss';
 	import '../styles/fonts.scss';
 	import Cursor from '../components/atoms/Cursor.svelte';
 	import { burst } from '../store/cursor';
+
+  injectSpeedInsights();
+  injectAnalytics();
 
 	let playClickSound: (() => void) | undefined;
 
