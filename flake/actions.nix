@@ -11,7 +11,7 @@
     };
 
     workflows = let
-      on = {
+      on = rec {
         push = {
           branches = ["master" "dev-qezta"];
           paths-ignore = [
@@ -19,9 +19,7 @@
             ".github/**"
           ];
         };
-        pull_request = {
-          branches = ["master" "dev-qezta"];
-        };
+        pull_request = push;
         workflow_dispatch = {};
       };
       permissions = {
