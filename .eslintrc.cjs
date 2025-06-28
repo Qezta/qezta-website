@@ -21,7 +21,7 @@ module.exports = {
   overrides: [
     {
       files: ['*.svelte'],
-      parser: 'svelte-eslint-parser',
+      parser: 'eslint-plugin-svelte',
       parserOptions: {
         parser: '@typescript-eslint/parser'
       }

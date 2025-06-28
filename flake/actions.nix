@@ -3,7 +3,7 @@
 
   flake.actions-nix = {
     pre-commit.enable = true;
-    defaults = {
+    defaultValues = {
       jobs = {
         runs-on = "ubuntu-latest";
         timeout-minutes = 30;
@@ -11,7 +11,7 @@
     };
 
     workflows = let
-      on = {
+      on = rec {
         push = {
           branches = ["master" "dev-qezta"];
           paths-ignore = [
@@ -19,10 +19,12 @@
             ".github/**"
           ];
         };
-        pull_request = {
-          branches = ["master" "dev-qezta"];
-        };
+        pull_request = push;
         workflow_dispatch = {};
+      };
+      permissions = {
+        contents = "write";
+        id-token = "write";
       };
       common-actions = [
         {
@@ -37,13 +39,18 @@
       ".github/workflows/flake-check.yml" = {
         inherit on;
         jobs.checking-flake = {
+          inherit permissions;
           steps =
             common-actions
             ++ [
               inputs.actions-nix.lib.steps.DeterminateSystemsNixInstallerAction
               {
+                name = "Magic Nix Cache(Use GitHub Actions Cache)";
+                uses = "DeterminateSystems/magic-nix-cache-action@main";
+              }
+              {
                 name = "Run nix flake check";
-                run = "nix flake check --impure --all-systems --no-build";
+                run = "nix -vL flake check --impure --all-systems --no-build";
               }
             ];
         };

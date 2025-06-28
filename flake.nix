@@ -1,11 +1,14 @@
 {
-  description = "Qezta site's flake";
+  description = "Qezta-Site flake";
 
-  outputs = {flake-parts, ...} @ inputs:
-    flake-parts.lib.mkFlake {inherit inputs;} {
+  outputs = inputs: let
+    inherit (inputs.flake-parts.lib) mkFlake;
+    specialArgs.customLib = inputs.OS-nixCfg.lib;
+  in
+    mkFlake {inherit inputs specialArgs;} ({inputs, ...}: {
       systems = builtins.import inputs.systems;
       imports = [./flake];
-    };
+    });
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
@@ -29,6 +32,18 @@
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";
         pre-commit-hooks.follows = "pre-commit-hooks";
+      };
+    };
+    OS-nixCfg = {
+      url = "github:DivitMittal/OS-nixCfg";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+        pre-commit-hooks.follows = "pre-commit-hooks";
+        systems.follows = "systems";
+        devshell.follows = "devshell";
+        treefmt-nix.follows = "treefmt-nix";
+        actions-nix.follows = "actions-nix";
       };
     };
   };
