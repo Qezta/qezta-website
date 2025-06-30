@@ -35,7 +35,7 @@
     "@vercel/speed-insights": "^1.2.0",
     "sass": "^1.89.0",
     "svelte-fa": "^3.0.4",
-    "three": "^0.152.2",
+    "three": "^0.177.0",
     "typescript": "^5.8.3"
   }
 }
