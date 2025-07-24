@@ -1,6 +1,6 @@
 <script lang="ts">
 	const mainSiteUrl = 'https://divit.qezta.com';
-	const logoSrc = '/qezta.png';
+	const logoSrc = '/qezta.gif';
 	const logoAlt = 'Qezta Logo';
 </script>
 
