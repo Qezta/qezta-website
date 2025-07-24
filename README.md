@@ -7,8 +7,15 @@ Under development Qezta website: <a href="https://qezta.com/" target="_blank" al
 ---
 
 <div align='center'>
-    <img src="https://github.com/DivitMittal/qezta-website/actions/workflows/.github/workflows/flake-check.yml/badge.svg" alt="nix-flake-check"/>
-    <img src="https://github.com/DivitMittal/qezta-website/actions/workflows/.github/workflows/gen-sitemap.yml/badge.svg" alt="gen-sitemap-xml"/>
+    <a href="https://github.com/DivitMittal/qezta-website/actions/workflows/flake-check.yml">
+        <img src="https://github.com/DivitMittal/qezta-website/actions/workflows/.github/workflows/flake-check.yml/badge.svg" alt="nix-flake-check"/>
+    </a>
+    <a href="https://github.com/DivitMittal/qezta-website/actions/workflows/gen-sitemap.yml">
+        <img src="https://github.com/DivitMittal/qezta-website/actions/workflows/.github/workflows/gen-sitemap.yml/badge.svg" alt="gen-sitemap-xml"/>
+    </a>
+    <a href="https://github.com/DivitMittal/qezta-website/actions/workflows/flake-lock-update.yml">
+        <img src="https://github.com/DivitMittal/qezta-website/actions/workflows/.github/workflows/flake-lock-update.yml/badge.svg" alt="flake-lock-update"/>
+    </a>
 </div>
 
 ---
