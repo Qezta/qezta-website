@@ -38,15 +38,13 @@ jobs:
   pull_request:
     branches:
     - main
-    paths:
-    - flake.nix
-    - flake.lock
-    - flake/**
+    paths-ignore:
+    - '**/*.md'
+    - .github/**
   push:
     branches:
     - main
-    paths:
-    - flake.nix
-    - flake.lock
-    - flake/**
+    paths-ignore:
+    - '**/*.md'
+    - .github/**
   workflow_dispatch: {}
