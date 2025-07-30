@@ -13,10 +13,9 @@
     common-on = rec {
       push = {
         branches = ["main"];
-        paths = [
-          "flake.nix"
-          "flake.lock"
-          "flake/**"
+        paths-ignore = [
+          "**/*.md"
+          ".github/**"
         ];
       };
       pull_request = push;
