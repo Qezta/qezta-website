@@ -20,7 +20,7 @@
         "--context",
         "ide-assistant",
         "--project",
-        "/Users/div/Projects/qezta-website"
+        "~/Projects/qezta-website"
       ],
       "env": {}
     }
