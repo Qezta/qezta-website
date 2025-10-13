@@ -34,9 +34,10 @@
 
 	#image {
 		transition: margin 1s ease;
-		margin-left: -100px;
-		margin-top: -100px;
 		margin-right: 20px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
 	#card {
