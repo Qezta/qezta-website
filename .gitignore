@@ -14,9 +14,10 @@ result-*
 
 ## Web
 node_modules
-/build
-/.svelte-kit
+**/build
+**/.svelte-kit
 /package
+**/dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
