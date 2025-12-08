@@ -1,6 +1,6 @@
 {
   "buildCommand": "cd ../.. && pnpm install && pnpm --filter @qezta/qezta-site build",
-  "outputDirectory": ".svelte-kit/output",
+  "outputDirectory": "build",
   "installCommand": "pnpm install",
   "framework": "sveltekit",
   "ignoreCommand": "git diff HEAD^ HEAD --quiet . ../../packages ../../pnpm-lock.yaml"
