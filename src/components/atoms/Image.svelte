@@ -7,7 +7,6 @@
 	export let height = '150';
 </script>
 
-<!-- svelte-ignore a11y-mouse-events-have-key-events -->
 <img
 	{src}
 	{alt}
