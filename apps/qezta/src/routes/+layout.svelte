@@ -1,64 +1,64 @@
 <script lang="ts">
   import { injectAnalytics } from '@vercel/analytics/sveltekit';
   import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
-	import { onMount } from 'svelte';
-	import '@qezta/ui/styles/global.scss';
-	import '@qezta/ui/styles/fonts.scss';
-	import Cursor from '@qezta/ui/components/atoms/Cursor.svelte';
-	import { burst } from '@qezta/ui/cursor';
+  import { onMount } from 'svelte';
+  import '@qezta/ui/styles/global.scss';
+  import '@qezta/ui/styles/fonts.scss';
+  import Cursor from '@qezta/ui/components/atoms/Cursor.svelte';
+  import { burst } from '@qezta/ui/cursor';
 
   injectSpeedInsights();
   injectAnalytics();
 
-	let playClickSound: (() => void) | undefined;
+  let playClickSound: (() => void) | undefined;
 
-	onMount(() => {
-		if (window.innerWidth <= 500) return;
+  onMount(() => {
+    if (window.innerWidth <= 500) return;
 
-		const audioCtx = new window.AudioContext();
-		const gainNode = audioCtx.createGain();
-		gainNode.gain.value = 1;
+    const audioCtx = new window.AudioContext();
+    const gainNode = audioCtx.createGain();
+    gainNode.gain.value = 1;
 
-		const request = new XMLHttpRequest();
-		request.open('GET', 'sounds/click.mp3', true);
-		request.responseType = 'arraybuffer';
-		request.onload = function () {
-			audioCtx.decodeAudioData(request.response, (buffer) => {
-				playClickSound = () => {
-					const source = audioCtx.createBufferSource();
+    const request = new XMLHttpRequest();
+    request.open('GET', 'sounds/click.mp3', true);
+    request.responseType = 'arraybuffer';
+    request.onload = function () {
+      audioCtx.decodeAudioData(request.response, (buffer) => {
+        playClickSound = () => {
+          const source = audioCtx.createBufferSource();
 
-					// Set playback rate between 0.6 and 1.3.
-					source.playbackRate.value = Math.random() * 0.7 + 0.6;
-					source.buffer = buffer;
+          // Set playback rate between 0.6 and 1.3.
+          source.playbackRate.value = Math.random() * 0.7 + 0.6;
+          source.buffer = buffer;
 
-					// Adjust volume based on cursor burst.
-					gainNode.gain.exponentialRampToValueAtTime(
-						Math.max($burst, 0.2),
-						audioCtx.currentTime + 0.1
-					);
+          // Adjust volume based on cursor burst.
+          gainNode.gain.exponentialRampToValueAtTime(
+            Math.max($burst, 0.2),
+            audioCtx.currentTime + 0.1
+          );
 
-					source.connect(gainNode);
+          source.connect(gainNode);
 
-					// Connect to output.
-					gainNode.connect(audioCtx.destination);
+          // Connect to output.
+          gainNode.connect(audioCtx.destination);
 
-					// Play sound.
-					source.start(0);
-				};
-			});
-		};
-		request.send();
-	});
+          // Play sound.
+          source.start(0);
+        };
+      });
+    };
+    request.send();
+  });
 </script>
 
 <svelte:head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="og:title" content="Qezta" />
-	<meta property="og:description" content="Qezta - Coming Soon" />
-	<meta name="twitter:card" content="summary" />
-	<meta name="theme-color" content="#000" />
-	<title>Qezta</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="og:title" content="Qezta" />
+  <meta property="og:description" content="Qezta - Coming Soon" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="theme-color" content="#000" />
+  <title>Qezta</title>
 </svelte:head>
 
 <svelte:window on:mousedown={playClickSound} on:contextmenu={(e) => e.preventDefault()} />

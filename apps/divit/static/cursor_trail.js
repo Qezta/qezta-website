@@ -1,3 +1,4 @@
+/* global THREE */
 if (window.innerWidth > 500) {
   let camera, scene, renderer;
   let uniforms;
