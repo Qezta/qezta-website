@@ -9,7 +9,7 @@
         "serena",
         "start-mcp-server",
         "--context",
-        "ide-assistant",
+        "claude-code",
         "--project",
         "~/Projects/qezta-website"
       ],
@@ -18,8 +18,7 @@
     "playwright": {
       "type": "stdio",
       "command": "pnpm",
-      "args": ["dlx", "@playwright/mcp"],
-      "env": {}
+      "args": ["dlx", "@playwright/mcp"]
     }
   }
 }
