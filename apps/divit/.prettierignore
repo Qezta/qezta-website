@@ -1,7 +1,8 @@
+.DS_Store
 node_modules
-/build
-/.svelte-kit
-/package
+build
+.svelte-kit
+package
 pnpm-lock.yaml
 package-lock.json
 yarn.lock
