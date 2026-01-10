@@ -3,5 +3,12 @@ import { sveltekit } from '@sveltejs/kit/vite';
 
 export default defineConfig({
   plugins: [sveltekit()],
-  base: '/'
+  base: '/',
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'modern',
+      }
+    }
+  }
 });
