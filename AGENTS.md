@@ -1,5 +1,7 @@
 ## Project Overview
 
+- @docs/
+
 This is a personal website project built with SvelteKit and TypeScript, featuring an interactive WebGL-based cursor effect and modern web technologies. The site serves as both a personal portfolio (divit.qezta.com) and development base for the Qezta website (qezta.com).
 
 ## Development Commands
