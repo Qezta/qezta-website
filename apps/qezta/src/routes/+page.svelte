@@ -1,4 +1,6 @@
 <script lang="ts">
+  import SourceLink from '@qezta/ui/components/atoms/SourceLink.svelte';
+
   const mainSiteUrl = 'https://divit.qezta.com';
   const logoSrc = '/qezta.gif';
   const logoAlt = 'Qezta Logo';
@@ -17,6 +19,8 @@
     <a href={mainSiteUrl} target="_blank" rel="noopener noreferrer">{mainSiteUrl}</a>
   </p>
 </div>
+
+<SourceLink />
 
 <style lang="scss">
   .placeholder-container {
