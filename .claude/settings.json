@@ -1,4 +1,10 @@
 {
-  "enabledMcpjsonServers": ["serena", "playwright"],
-  "enableAllProjectMcpServers": true
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "serena",
+    "playwright"
+  ],
+  "enabledPlugins": {
+    "frontend-mobile-development@claude-code-workflows": true
+  }
 }
