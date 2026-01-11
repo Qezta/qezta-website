@@ -29,7 +29,14 @@ body {
   margin: 0;
   background: var(--bg-color);
 
-  @media (max-width: 505px) {
+  // Use pointer type for more reliable mobile detection
+  @media (pointer: coarse) {
+    display: initial;
+    background-color: #151515;
+  }
+
+  // Fallback for small screens without pointer detection
+  @media (max-width: 505px) and (pointer: none) {
     display: initial;
     background-color: #151515;
   }

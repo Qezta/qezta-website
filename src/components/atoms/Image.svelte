@@ -1,32 +1,34 @@
 <script lang="ts">
-	import { scale } from '../../store/cursor';
+  import { scale } from '../../store/cursor';
 
-	export let src = '/pp_ascii.svg';
-	export let alt = "Divit Mittal's profile picture";
-	export let width = '150';
-	export let height = '150';
+  export let src = '/pp_ascii.svg';
+  export let alt = "Divit Mittal's profile picture";
+  export let width = '150';
+  export let height = '150';
 </script>
 
 <img
-	{src}
-	{alt}
-	{width}
-	{height}
-	on:mouseover={() => scale.set(1.2)}
-	on:mouseleave={() => scale.set(0)}
-	style="border-radius: {$$props.borderRadius || '8px'}"
+  {src}
+  {alt}
+  {width}
+  {height}
+  loading="lazy"
+  decoding="async"
+  on:mouseover={() => scale.set(1.2)}
+  on:mouseleave={() => scale.set(0)}
+  style="border-radius: {$$props.borderRadius || '8px'}"
 />
 
 <style lang="scss">
-	img {
-		cursor: pointer;
-		display: block;
-		max-width: 100%;
-		height: auto;
-		transition: 0.3s filter ease;
-		border-radius: 8px;
-		&:hover {
-			filter: brightness(1.3);
-		}
-	}
+  img {
+    cursor: pointer;
+    display: block;
+    max-width: 100%;
+    height: auto;
+    transition: 0.3s filter ease;
+    border-radius: 8px;
+    &:hover {
+      filter: brightness(1.3);
+    }
+  }
 </style>

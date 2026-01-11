@@ -13,7 +13,9 @@
   let playClickSound: (() => void) | undefined;
 
   onMount(() => {
-    if (window.innerWidth <= 500) return;
+    // Detect touch device using pointer media query (more reliable than width)
+    const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
+    if (isTouchDevice) return;
 
     const audioCtx = new window.AudioContext();
     const gainNode = audioCtx.createGain();
