@@ -2,9 +2,14 @@
   import { injectAnalytics } from '@vercel/analytics/sveltekit';
   import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
   import { onMount } from 'svelte';
+  import { browser } from '$app/environment';
   import '@qezta/ui/styles/global.scss';
   import '@qezta/ui/styles/fonts.scss';
   import Cursor from '@qezta/ui/components/atoms/Cursor.svelte';
+  import TouchParticles from '@qezta/ui/components/atoms/TouchParticles.svelte';
+  import MobileEnhancer from '@qezta/ui/components/atoms/MobileEnhancer.svelte';
+  import MobileBackground from '@qezta/ui/components/atoms/MobileBackground.svelte';
+  import GyroEnhancer from '@qezta/ui/components/atoms/GyroEnhancer.svelte';
   import { burst } from '@qezta/ui/cursor';
 
   injectSpeedInsights();
@@ -13,7 +18,7 @@
   let playClickSound: (() => void) | undefined;
 
   onMount(() => {
-    if (window.innerWidth <= 500) return;
+    if (!browser || window.innerWidth <= 500) return;
 
     const audioCtx = new window.AudioContext();
     const gainNode = audioCtx.createGain();
@@ -64,4 +69,8 @@
 <svelte:window on:mousedown={playClickSound} on:contextmenu={(e) => e.preventDefault()} />
 
 <Cursor />
+<MobileBackground />
+<TouchParticles />
+<MobileEnhancer />
+<GyroEnhancer />
 <slot />
