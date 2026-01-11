@@ -6,10 +6,7 @@
   import '@qezta/ui/styles/global.scss';
   import '@qezta/ui/styles/fonts.scss';
   import Cursor from '@qezta/ui/components/atoms/Cursor.svelte';
-  import TouchParticles from '@qezta/ui/components/atoms/TouchParticles.svelte';
-  import MobileEnhancer from '@qezta/ui/components/atoms/MobileEnhancer.svelte';
-  import MobileBackground from '@qezta/ui/components/atoms/MobileBackground.svelte';
-  import GyroEnhancer from '@qezta/ui/components/atoms/GyroEnhancer.svelte';
+  import TouchCursor from '@qezta/ui/components/atoms/TouchCursor.svelte';
   import { burst } from '@qezta/ui/cursor';
 
   injectSpeedInsights();
@@ -69,8 +66,5 @@
 <svelte:window on:mousedown={playClickSound} on:contextmenu={(e) => e.preventDefault()} />
 
 <Cursor />
-<MobileBackground />
-<TouchParticles />
-<MobileEnhancer />
-<GyroEnhancer />
+<TouchCursor />
 <slot />
