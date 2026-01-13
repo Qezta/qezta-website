@@ -46,7 +46,7 @@
 
   p {
     line-height: 1.6;
-    max-width: 500px;
+    white-space: nowrap;
   }
 
   .link-paragraph {
