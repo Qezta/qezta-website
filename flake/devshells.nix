@@ -23,14 +23,16 @@
           inherit
             (pkgs)
             ### LSPs & Formatters
+            ## Nix
             nixd
             alejandra
+            ## Web
             vscode-langservers-extracted
             emmet-language-server
             typescript-language-server
             svelte-language-server
+            prettier
             ;
-          inherit (pkgs.nodePackages) prettier;
         };
       };
     };
