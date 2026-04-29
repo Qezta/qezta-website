@@ -7,6 +7,7 @@
   import '@qezta/ui/styles/fonts.scss';
   import Cursor from '@qezta/ui/components/atoms/Cursor.svelte';
   import TouchCursor from '@qezta/ui/components/atoms/TouchCursor.svelte';
+  import Chatbot from '@qezta/ui/components/organisms/Chatbot.svelte';
   import { burst } from '@qezta/ui/cursor';
 
   injectSpeedInsights();
@@ -67,4 +68,5 @@
 
 <Cursor />
 <TouchCursor />
+<Chatbot />
 <slot />
