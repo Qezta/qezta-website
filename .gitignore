@@ -16,6 +16,7 @@ result-*
 node_modules
 **/build
 **/.svelte-kit
+**/.vercel
 /package
 **/dist
 vite.config.js.timestamp-*
