@@ -2,7 +2,9 @@
   inputs,
   lib,
   ...
-}: {
+}: let
+  customLib = import (inputs.OS-nixCfg + "/lib/custom.nix") {inherit (inputs.nixpkgs) lib;};
+in {
   imports = [inputs.devshell.flakeModule];
 
   perSystem = {
@@ -33,6 +35,8 @@
             svelte-language-server
             prettier
             ;
+          ## AI context
+          apm = customLib.mkUvxBin pkgs "apm" "--from apm-cli apm";
         };
       };
     };
