@@ -26,3 +26,6 @@ vite.config.ts.timestamp-*
 .serena*
 *local.json
 docs/
+
+## git worktrees kept inside the project directory
+.worktrees/
