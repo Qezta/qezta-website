@@ -44,16 +44,14 @@
     margin-bottom: 0.5rem;
   }
 
+  // Let copy wrap: `nowrap` clipped both edges of centred text on phones.
   p {
     line-height: 1.6;
-    white-space: nowrap;
+    max-width: 40rem;
   }
 
-  .link-paragraph {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 100%;
+  .link-paragraph a {
+    overflow-wrap: anywhere;
   }
   /* --- End Added style --- */
 
