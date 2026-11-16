@@ -199,8 +199,10 @@ This is an interactive CLI experience - explore away!`,
 <style lang="scss">
   .terminal-toggle {
     position: fixed;
-    bottom: 2rem;
-    right: 2rem;
+    // Sit to the left of the Chatbot launcher (52px circle at bottom/right
+    // 28px) instead of underneath it.
+    bottom: 32px;
+    right: calc(28px + 52px + 12px);
     z-index: 999;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
@@ -244,6 +246,7 @@ This is an interactive CLI experience - explore away!`,
     max-width: calc(100vw - 4rem);
     height: 500px;
     max-height: calc(100vh - 8rem);
+    max-height: calc(100dvh - 8rem);
     background: #1a1a1a;
     border: 2px solid #444;
     border-radius: 8px;
@@ -260,6 +263,7 @@ This is an interactive CLI experience - explore away!`,
       bottom: 5rem;
       height: 450px;
       max-height: calc(100vh - 6rem);
+      max-height: calc(100dvh - 6rem);
     }
 
     @media (max-width: 505px) {
@@ -268,6 +272,7 @@ This is an interactive CLI experience - explore away!`,
       bottom: 4.5rem;
       height: 400px;
       max-height: calc(100vh - 5.5rem);
+      max-height: calc(100dvh - 5.5rem);
       border-radius: 4px;
     }
   }
@@ -423,8 +428,6 @@ This is an interactive CLI experience - explore away!`,
 
   @media (max-width: 505px) {
     .terminal-toggle {
-      bottom: 1.5rem;
-      right: 1.5rem;
       padding: 0.6rem 1.2rem;
       font-size: 0.85rem;
     }
