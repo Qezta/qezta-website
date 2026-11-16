@@ -37,6 +37,8 @@ in {
             ;
           ## AI context
           apm = customLib.mkUvxBin pkgs "apm" "--from apm-cli apm";
+          ## Deploys (Vercel); not packaged in nixpkgs, so run a pinned release.
+          vercel = customLib.mkPnpmDlxBin pkgs "vercel" "vercel@65.9.0";
         };
       };
     };
