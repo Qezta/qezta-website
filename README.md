@@ -58,6 +58,14 @@ Under development Qezta website: <a href="https://qezta.com/" target="_blank" al
 
 This monorepo is what Vercel deploys for both sites.
 
+```mermaid
+flowchart LR
+  ui["packages/ui<br/>@qezta/ui"] --> divit["apps/divit"]
+  ui --> qezta["apps/qezta"]
+  divit --> v1["Vercel project<br/>qezta-website-divit"] --> d1(["divit.qezta.com"])
+  qezta --> v2["Vercel project<br/>qezta-website-qezta"] --> d2(["qezta.com"])
+```
+
 | Path | Deployed as |
 | --- | --- |
 | `apps/divit` | [divit.qezta.com](https://divit.qezta.com) (Vercel project `qezta-website-divit`) |
